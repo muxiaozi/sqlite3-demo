@@ -1,4 +1,4 @@
-#include <spdlog/spdlog.h>
+Ôªø#include <spdlog/spdlog.h>
 #include <sqlite3.h>
 
 int main(int argc, char const *argv[])
@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
     int nRow, nCol;
     char* err;
 
-    // ¥¥Ω®±Ì
+    // ÂàõÂª∫Ë°®
     const char* sql1 = "CREATE TABLE IF NOT EXISTS `students`(`id` INTEGER, `name` STRING);";
     ret = sqlite3_get_table(db, sql1, &result, &nRow, &nCol, &err);
     if (ret != 0) {
@@ -27,7 +27,7 @@ int main(int argc, char const *argv[])
     }
     SPDLOG_INFO("create table success");
 
-    //≤Â»Î ˝æ›
+    //ÊèíÂÖ•Êï∞ÊçÆ
     const char* sql2 = "INSERT INTO `students` VALUES (1, 'zhangsan'), (2, 'lisi');";
     ret = sqlite3_get_table(db, sql2, &result, &nRow, &nCol, &err);
     if (ret != 0) {
@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
     }
     SPDLOG_INFO("insert table success");
 
-    // ≤È—Ø±Ì
+    // Êü•ËØ¢Ë°®
     const char* sql3 = "SELECT * FROM `students`;";
     ret = sqlite3_get_table(db, sql3, &result, &nRow, &nCol, &err);
     if (ret != 0) {
